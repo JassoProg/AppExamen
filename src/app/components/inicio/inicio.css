@@ -1,0 +1,32 @@
+.hero-section {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  border-bottom: 3px solid #FFD700;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #FFD700;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4), 0 0 20px rgba(220, 53, 69, 0.2);
+  border-color: #dc3545;
+}
+
+.fas {
+  color: #dc3545;
+}
+
+/* Animation for icons */
+.card:hover .fas {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

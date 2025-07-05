@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|c:\\users\\rayre\\onedrive\\escritorio\\tareas o trabajos\\desarrollo web integral\\aplicaciones_net\\appexamen_backend\\appexamen_backend\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|solutionrelative:appexamen_backend\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|c:\\users\\rayre\\onedrive\\escritorio\\tareas o trabajos\\desarrollo web integral\\aplicaciones_net\\appexamen_backend\\appexamen_backend\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|solutionrelative:appexamen_backend\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|c:\\users\\rayre\\onedrive\\escritorio\\tareas o trabajos\\desarrollo web integral\\aplicaciones_net\\appexamen_backend\\appexamen_backend\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|solutionrelative:appexamen_backend\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|c:\\users\\rayre\\onedrive\\escritorio\\tareas o trabajos\\desarrollo web integral\\aplicaciones_net\\appexamen_backend\\appexamen_backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794A2DFC-0164-4B0F-B61A-B59718A2DC04}|AppExamen_BackEnd\\AppExamen_BackEnd.csproj|solutionrelative:appexamen_backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "AppExamen_BackEnd\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "AppExamen_BackEnd\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAowGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:40:37.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "AppExamen_BackEnd\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "AppExamen_BackEnd\\Controllers\\ProductosController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAswJkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:40:11.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Models\\Categoria.cs",
+              "RelativeDocumentMoniker": "AppExamen_BackEnd\\Models\\Categoria.cs",
+              "ToolTip": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Models\\Categoria.cs",
+              "RelativeToolTip": "AppExamen_BackEnd\\Models\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:40:31.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Models\\Producto.cs",
+              "RelativeDocumentMoniker": "AppExamen_BackEnd\\Models\\Producto.cs",
+              "ToolTip": "C:\\Users\\rayre\\OneDrive\\Escritorio\\Tareas o Trabajos\\Desarrollo Web Integral\\Aplicaciones_NET\\AppExamen_BackEnd\\AppExamen_BackEnd\\Models\\Producto.cs",
+              "RelativeToolTip": "AppExamen_BackEnd\\Models\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:40:19.611Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

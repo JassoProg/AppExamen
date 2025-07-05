@@ -1,0 +1,215 @@
+<div class="container-fluid py-4" style="background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); min-height: 100vh; color: white;">
+  <h1 class="text-center mb-4" style="color: #FFD700;">
+    <i class="fas fa-cog me-2" style="color: #dc3545;"></i>Administración de Productos
+  </h1>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs" id="adminTabs" role="tablist" style="border-bottom: 3px solid #FFD700;">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="productos-tab" data-bs-toggle="tab" data-bs-target="#productos" type="button" role="tab"
+              style="background: #dc3545; color: white; border: 2px solid #FFD700; font-weight: bold;">
+        Productos
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="categorias-tab" data-bs-toggle="tab" data-bs-target="#categorias" type="button" role="tab"
+              style="background: #2a2a2a; color: #FFD700; border: 2px solid #FFD700; font-weight: bold;">
+        Categorías
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="adminTabsContent">
+    <!-- Tab Productos -->
+    <div class="tab-pane fade show active" id="productos" role="tabpanel">
+      <div class="row mt-4">
+        <!-- Formulario Productos -->
+        <div class="col-md-4">
+          <div class="card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid #FFD700; color: white;">
+            <div class="card-header" style="background: #dc3545; border-bottom: 2px solid #FFD700;">
+              <h5 style="color: #FFD700; margin: 0;">{{isUpdateActive ? 'Editar' : 'Agregar'}} Producto</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Nombre:</label>
+                  <input type="text" [(ngModel)]="nombreProducto" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" placeholder="Nombre del producto"
+                         style="background: #3a3a3a; border: 2px solid #FFD700; color: white;">
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Descripción:</label>
+                  <textarea [(ngModel)]="descripcionProducto" [ngModelOptions]="{standalone: true}" 
+                           class="form-control" rows="3" placeholder="Descripción del producto"
+                           style="background: #3a3a3a; border: 2px solid #FFD700; color: white;"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Precio:</label>
+                  <input type="number" [(ngModel)]="precioProducto" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" step="0.01" placeholder="0.00"
+                         style="background: #3a3a3a; border: 2px solid #FFD700; color: white;">
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Imagen (URL):</label>
+                  <input type="url" [(ngModel)]="imagenProducto" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" placeholder="https://..."
+                         style="background: #3a3a3a; border: 2px solid #FFD700; color: white;">
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Categoría:</label>
+                  <select [(ngModel)]="categoriaProducto" [ngModelOptions]="{standalone: true}" 
+                          class="form-select"
+                          style="background: #3a3a3a; border: 2px solid #FFD700; color: white;">
+                    <option value="0">Seleccionar categoría</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.id">
+                      {{categoria.nombre}}
+                    </option>
+                  </select>
+                </div>
+                
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn" (click)="guardarProducto()"
+                          style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; font-weight: bold;">
+                    {{isUpdateActive ? 'Actualizar' : 'Guardar'}}
+                  </button>
+                  <button *ngIf="isUpdateActive" type="button" class="btn" (click)="limpiarFormularioProducto()"
+                          style="background: #dc3545; color: white; border: none; font-weight: bold;">
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista Productos -->
+        <div class="col-md-8">
+          <div class="card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid #FFD700; color: white;">
+            <div class="card-header" style="background: #dc3545; border-bottom: 2px solid #FFD700;">
+              <h5 style="color: #FFD700; margin: 0;">Lista de Productos</h5>
+            </div>
+            <div class="card-body">
+              <div *ngIf="!isResultLoaded" class="text-center">
+                <div class="spinner-border" role="status" style="color: #dc3545;"></div>
+                <p class="mt-2" style="color: #FFD700;">Cargando productos...</p>
+              </div>
+
+              <div class="table-responsive" *ngIf="isResultLoaded">
+                <table class="table table-hover" style="color: #000000; background: #ffffff;">
+                  <thead style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #000;">
+                    <tr>
+                      <th style="font-weight: bold;">Número</th>
+                      <th style="font-weight: bold;">Imagen</th>
+                      <th style="font-weight: bold;">Nombre</th>
+                      <th style="font-weight: bold;">Precio</th>
+                      <th style="font-weight: bold;">Categoría</th>
+                      <th style="font-weight: bold;">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody style="background: #ffffff;">
+                    <tr *ngFor="let producto of productos" style="border-bottom: 1px solid #FFD700; background: #ffffff;">
+                      <td style="color: #000000; font-weight: bold; font-size: 1.1rem;">{{producto.id}}</td>
+                      <td>
+                        <img [src]="producto.imagenUrl" class="product-thumb" [alt]="producto.nombre">
+                      </td>
+                      <td style="color: #000000; font-weight: bold;">{{producto.nombre}}</td>
+                      <td style="color: #dc3545; font-weight: bold; font-size: 1.1rem;">${{producto.precio | number:'1.2-2'}}</td>
+                      <td style="color: #000000;">{{producto.categoria?.nombre || 'Sin categoría'}}</td>
+                      <td>
+                        <button type="button" class="btn btn-sm me-1" (click)="obtenerProducto(producto)"
+                                style="background: #FFD700; color: #000; border: none;">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm" (click)="eliminarProducto(producto)"
+                                style="background: #dc3545; color: white; border: none;">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Categorías -->
+    <div class="tab-pane fade" id="categorias" role="tabpanel">
+      <div class="row mt-4">
+        <!-- Formulario Categorías -->
+        <div class="col-md-4">
+          <div class="card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid #FFD700; color: white;">
+            <div class="card-header" style="background: #dc3545; border-bottom: 2px solid #FFD700;">
+              <h5 style="color: #FFD700; margin: 0;">{{isUpdateCategoriaActive ? 'Editar' : 'Agregar'}} Categoría</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label" style="color: #FFD700; font-weight: bold;">Nombre:</label>
+                  <input type="text" [(ngModel)]="nombreCategoria" [ngModelOptions]="{standalone: true}" 
+                         class="form-control" placeholder="Nombre de la categoría"
+                         style="background: #3a3a3a; border: 2px solid #FFD700; color: white;">
+                </div>
+                
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn" (click)="guardarCategoria()"
+                          style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; font-weight: bold;">
+                    {{isUpdateCategoriaActive ? 'Actualizar' : 'Guardar'}}
+                  </button>
+                  <button *ngIf="isUpdateCategoriaActive" type="button" class="btn" (click)="limpiarFormularioCategoria()"
+                          style="background: #dc3545; color: white; border: none; font-weight: bold;">
+                    Cancelar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista Categorías -->
+        <div class="col-md-8">
+          <div class="card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid #FFD700; color: white;">
+            <div class="card-header" style="background: #dc3545; border-bottom: 2px solid #FFD700;">
+              <h5 style="color: #FFD700; margin: 0;">Lista de Categorías</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover" style="color: #000000; background: #ffffff;">
+                  <thead style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #000;">
+                    <tr>
+                      <th style="font-weight: bold;">Número</th>
+                      <th style="font-weight: bold;">Nombre</th>
+                      <th style="font-weight: bold;">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody style="background: #ffffff;">
+                    <tr *ngFor="let categoria of categorias" style="border-bottom: 1px solid #FFD700; background: #ffffff;">
+                      <td style="color: #000000; font-weight: bold; font-size: 1.1rem;">{{categoria.id}}</td>
+                      <td style="color: #000000; font-weight: bold;">{{categoria.nombre}}</td>
+                      <td>
+                        <button type="button" class="btn btn-sm me-1" (click)="obtenerCategoria(categoria)"
+                                style="background: #FFD700; color: #000; border: none;">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm" (click)="eliminarCategoria(categoria)"
+                                style="background: #dc3545; color: white; border: none;">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
